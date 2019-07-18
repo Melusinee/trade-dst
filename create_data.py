@@ -256,7 +256,7 @@ def analyze_dialogue(dialogue, maxlen):
     # do all the necessary postprocessing
     if len(d['log']) % 2 != 0:
         #print path
-        print 'odd # of turns'
+        print('odd # of turns')
         return None  # odd number of turns, wrong dialogue
     d_pp = {}
     d_pp['goal'] = d['goal']  # for now we just copy the goal
@@ -265,18 +265,18 @@ def analyze_dialogue(dialogue, maxlen):
     # last_bvs = []
     for i in range(len(d['log'])):
         if len(d['log'][i]['text'].split()) > maxlen:
-            print 'too long'
+            print('too long')
             return None  # too long sentence, wrong dialogue
         if i % 2 == 0:  # usr turn
             text = d['log'][i]['text']
             if not is_ascii(text):
-                print 'not ascii'
+                print('not ascii')
                 return None
             usr_turns.append(d['log'][i])
         else:  # sys turn
             text = d['log'][i]['text']
             if not is_ascii(text):
-                print 'not ascii'
+                print('not ascii')
                 return None
             belief_summary, belief_value_summary = get_summary_bstate(d['log'][i]['metadata'])
             d['log'][i]['belief_summary'] = str(belief_summary)
