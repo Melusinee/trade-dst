@@ -429,7 +429,7 @@ def divideData(data):
     fin.close()
 
     valListFile = []
-    fin = file('data/multi-woz/valListFile.json')
+    fin = open('data/multi-woz/valListFile.json')
     for line in fin:
         valListFile.append(line[:-1])
     fin.close()
