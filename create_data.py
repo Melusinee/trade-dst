@@ -303,6 +303,7 @@ def get_dial(dialogue):
         dial.append({'usr':item[0],'sys':item[1], 'sys_a':item[2], 'domain':item[3], 'bvs':item[4]})
     return dial
 
+import urllib.request
 
 def loadData():
     data_url = "data/multi-woz/data.json"
@@ -313,8 +314,9 @@ def loadData():
 
     if not os.path.exists(data_url):
         print("Downloading and unzipping the MultiWOZ dataset")
-        resp = urllib.urlopen(dataset_url)
-        zip_ref = ZipFile(BytesIO(resp.read()))
+#         resp = urllib.urlopen(dataset_url)
+        with urllib.request.urlopen(dataset_url) as resp:
+            zip_ref = ZipFile(BytesIO(resp.read()))
         zip_ref.extractall("data/multi-woz")
         zip_ref.close()
         shutil.copy('data/multi-woz/MULTIWOZ2 2/data.json', 'data/multi-woz/')
