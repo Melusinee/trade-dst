@@ -489,13 +489,13 @@ def divideData(data):
     print("# of dialogues: Train {}, Val {}, Test {}".format(count_train, count_val, count_test))
 
     # save all dialogues
-    with open('data/dev_dials.json', 'wb') as f:
+    with open('data/dev_dials.json', 'w') as f:
         json.dump(val_dials, f, indent=4)
 
-    with open('data/test_dials.json', 'wb') as f:
+    with open('data/test_dials.json', 'w') as f:
         json.dump(test_dials, f, indent=4)
 
-    with open('data/train_dials.json', 'wb') as f:
+    with open('data/train_dials.json', 'w') as f:
         json.dump(train_dials, f, indent=4)
 
     # return word_freqs_usr, word_freqs_sys
