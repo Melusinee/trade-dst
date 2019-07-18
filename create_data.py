@@ -360,7 +360,7 @@ def createData():
     # dic = delexicalize.prepareSlotValuesIndependent()
     delex_data = {}
 
-    fin1 = file('data/multi-woz/data.json')
+    fin1 = open('data/multi-woz/data.json')
     data = json.load(fin1)
 
     fin2 = file('data/multi-woz/dialogue_acts.json')
