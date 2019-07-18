@@ -175,7 +175,7 @@ def getDialogueAct(filename, data, data2, idx, idx_acts):
     except:
         return acts
 
-    if not isinstance(turn, str) and not isinstance(turn, unicode):
+    if not isinstance(turn, str):
         for k in turn.keys():
             # temp = [k.split('-')[0].lower(), k.split('-')[1].lower()]
             # for a in turn[k]:
