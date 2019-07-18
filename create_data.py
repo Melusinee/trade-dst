@@ -363,7 +363,7 @@ def createData():
     fin1 = open('data/multi-woz/data.json')
     data = json.load(fin1)
 
-    fin2 = file('data/multi-woz/dialogue_acts.json')
+    fin2 = open('data/multi-woz/dialogue_acts.json')
     data2 = json.load(fin2)
 
     for didx, dialogue_name in enumerate(data):
@@ -423,7 +423,7 @@ def divideData(data):
     """Given test and validation sets, divide
     the data for three different sets"""
     testListFile = []
-    fin = file('data/multi-woz/testListFile.json')
+    fin = open('data/multi-woz/testListFile.json')
     for line in fin:
         testListFile.append(line[:-1])
     fin.close()
