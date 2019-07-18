@@ -335,7 +335,7 @@ def getDomain(idx, log, domains, last_domain):
         if len(ds_diff.keys()) == 0: # no clues from dialog states
             crnt_doms = last_domain
         else:
-            crnt_doms = ds_diff.keys()
+            crnt_doms = list(ds_diff.keys())
         return crnt_doms[0] # How about multiple domains in one sentence senario ?
 
 
